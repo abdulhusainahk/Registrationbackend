@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LogIn Page</title>
+</head>
+<body>
+<form method="POST" class="post-form" action="/login">
+    <div class="container">
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-danger " role="alert">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+        </div>
+        {% csrf_token %}
+        <h3>Enter the user name</h3>
+        <br>
+        {{form.Username }}
+        <br>
+        <p>Enter password:</p>
+        <br>
+        {{ form.Password }}<br>
+        <button type="submit">submit</button>
+    </form>
+</body>
+</html>

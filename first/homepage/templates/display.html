@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Display Bio Data</title>
+</head>
+<body>
+
+<table class="table table-striped table-bordered table-sm" border="1px solid black" align="center">
+    <thead class="thead-dark">
+        <tr>
+            <th>Username</th>
+            <th>UserID</th>
+            <th>Full Name</th>
+            <th>Email Address</th>
+            <th>Phone Number</th>
+        </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>{{ form.Username }}</td>
+        <td>{{ form.UserId }}</td>
+        <td>{{ form.Name }}</td>
+        <td>{{ form.Email }}</td>
+        <td>{{ form.Phone }}</td>
+    </tr>
+    </tbody>
+
+</table>
+
+<form method="POST" action="/">
+    {% csrf_token %}
+    <button type="submit">Logout</button>
+</form>
+</body>
+</html>

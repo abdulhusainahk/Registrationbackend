@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+</head>
+<body>
+<form method="POST" class="post-form" action="/register">
+        {% csrf_token %}
+
+        <h3>Sign up Here...!</h3>
+        <p>Enter Your Full Name:</p>
+        <br>
+        {{ form2.Name }}<br>
+        <p>Enter your Mail Id:</p>
+        <br>
+        {{ form2.Email }}<br>
+        <p>Enter your Phone Number:</p>
+        <br>
+        {{ form2.Phone }}<br>
+        <p>Enter your Unique Username:</p>
+        <br>
+        {{ form2.Username }}<br>
+        <p>Enter your Unique UseId:</p>
+        <br>
+        {{ form2.UserId }}<br>
+        <p>Enter your Password:</p>
+        <br>
+        {{ form2.Password }}<br>
+        <button type="submit">submit</button>
+    </form>
+{% if flag and val == '1' %}
+<script>alert("The password should be of 8 character.")</script>
+{% endif %}
+{% if flag and val == '2' %}
+<script>alert("The Username already exist.")</script>
+{% endif %}
+</body>
+</html>

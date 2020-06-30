@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to project</title>
+</head>
+<body>
+<div class="container">
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-success m-2" id="msg" role="alert">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+    </div>
+    <h1>Welcome to my project</h1>
+    <br>
+    <p>Log In </p>
+    <form method="POST" action="/login">
+         {% csrf_token %}
+        <button type="submit">login</button>
+    </form>
+    <br>
+    <p>Registeration</p>
+    <form method="POST" action="/register">
+         {% csrf_token %}
+        <button type="submit">Signin</button>
+    </form>
+</body>
+</html>
